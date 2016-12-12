@@ -42,7 +42,7 @@ public class frmReporteTotal extends javax.swing.JFrame {
         try{
             conn= Conexion_1.open();
             PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs= ps.executeQuery(sql);
+            ResultSet rs= ps.executeQuery();
             while(rs.next()){
                 registro[0]= rs.getDate(5).toString();
                 registro[1]= rs.getString(2);
@@ -81,7 +81,7 @@ public class frmReporteTotal extends javax.swing.JFrame {
         try{
             conn= Conexion_1.open();
             PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs= ps.executeQuery(sql);
+            ResultSet rs= ps.executeQuery();
             while(rs.next()){
                 registro[0]= rs.getString(2);
                 registro[1]= Integer.toString(rs.getInt(1));
