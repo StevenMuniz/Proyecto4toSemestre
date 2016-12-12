@@ -5,7 +5,6 @@
  */
 package Formulario;
 
-import Conexion.conexion;
 import Dominio.Cliente;
 import Repository.ClienteRepository;
 import java.sql.PreparedStatement;

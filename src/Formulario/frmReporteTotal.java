@@ -6,7 +6,7 @@
 package Formulario;
 
 import Conexion.Conexion_1;
-import Conexion.conexion;
+
 import java.awt.print.PrinterException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

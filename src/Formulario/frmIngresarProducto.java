@@ -5,7 +5,6 @@
  */
 package Formulario;
 
-import Conexion.conexion;
 import Dominio.Consumo;
 import Dominio.Producto;
 import Repository.ConsumoRepository;
