@@ -430,13 +430,14 @@ public class frmCliente extends javax.swing.JFrame {
             }else
                 if(JOptionPane.showConfirmDialog(null,"Guardar Datos", "Confirmar",1)==0){
                 Guardar();
+                Desabilitar();
+                bncancelar.setVisible(false);bnguardar.setVisible(false);
+                bnmodificar.setVisible(false); bneliminar.setVisible(false);
+                bnnuevo.setVisible(true);Buscar.setEnabled(true);
+                Limpiar();
             }   
         }
-        Desabilitar();
-            bncancelar.setVisible(false);bnguardar.setVisible(false);
-            bnmodificar.setVisible(false); bneliminar.setVisible(false);
-            bnnuevo.setVisible(true);Buscar.setEnabled(true);
-            Limpiar();
+        
         
         
         

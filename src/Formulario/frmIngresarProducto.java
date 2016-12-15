@@ -123,7 +123,7 @@ public class frmIngresarProducto extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
-        jLabel17.setText("Descrpcion");
+        jLabel17.setText("Descripción");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         txtdescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));

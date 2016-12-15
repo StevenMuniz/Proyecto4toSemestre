@@ -9,7 +9,7 @@ public class Conexion_1{
     public static Connection open() throws SQLException{
         String url="jdbc:postgresql://localhost:5432/Restaurante";
 	String user="postgres";
-	String password="1234";
+	String password="1993";
 		
         Connection conn = DriverManager.getConnection(url, user, password);
         return conn;

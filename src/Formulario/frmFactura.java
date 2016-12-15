@@ -106,7 +106,8 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         for(Consumo c: con){
             cbconsumo.addItem(c);
         }
-//        cbconsumo.setSelectedIndex(-1);
+        
+        cbconsumo.setSelectedIndex(-1);
         
     }
     //     Descripcion Producto
@@ -118,7 +119,7 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
             cbdescripcion.addItem(producto.getDescripcion());
            
         }
-//        cbdescripcion.setSelectedIndex(-1);
+        cbdescripcion.setSelectedIndex(-1);
     }
     //     Descripcion Precio y Cantidad
     public void Precio(){
@@ -218,11 +219,11 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         txtprecio = new javax.swing.JTextField();
         Precio1 = new javax.swing.JLabel();
         txtcantbase = new javax.swing.JTextField();
-        bnguardar = new javax.swing.JButton();
         txtcantidad = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         cbconsumo = new javax.swing.JComboBox();
         lblsalir1 = new javax.swing.JLabel();
+        bnguardar = new javax.swing.JButton();
 
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -268,10 +269,10 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         vendedor.setEnabled(false);
 
         jLabel10.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
-        jLabel10.setText("Cedula");
+        jLabel10.setText("Cédula");
 
         jLabel20.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
-        jLabel20.setText("Fecha emision");
+        jLabel20.setText("Fecha emisión");
 
         codfactura.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -463,7 +464,7 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         });
 
         jLabel15.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
-        jLabel15.setText("Descripcion");
+        jLabel15.setText("Descripción");
 
         Precio.setFont(new java.awt.Font("Elephant", 0, 12)); // NOI18N
         Precio.setText("Precio");
@@ -477,23 +478,6 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         Precio1.setText("Stock");
 
         txtcantbase.setEditable(false);
-
-        bnguardar.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
-        bnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/imprimir.png"))); // NOI18N
-        bnguardar.setText("IMPRIMIR");
-        bnguardar.setBorderPainted(false);
-        bnguardar.setContentAreaFilled(false);
-        bnguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        bnguardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bnguardar.setIconTextGap(-1);
-        bnguardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/imprimir1.png"))); // NOI18N
-        bnguardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/imprimir2.png"))); // NOI18N
-        bnguardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bnguardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bnguardarActionPerformed(evt);
-            }
-        });
 
         txtcantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -532,34 +516,35 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jButton1)
-                        .addGap(62, 62, 62)
-                        .addComponent(bnguardar))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addGap(18, 18, 18))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Precio)
-                                .addGap(34, 34, 34)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtprecio, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                            .addComponent(txtcantidad))
-                        .addGap(52, 52, 52)
-                        .addComponent(Precio1)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(Precio)
+                                        .addGap(34, 34, 34)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtprecio, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                                    .addComponent(txtcantidad))
+                                .addGap(52, 52, 52)
+                                .addComponent(Precio1)))
                         .addGap(18, 18, 18)
                         .addComponent(txtcantbase, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(4, 4, 4)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(1, 1, 1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(cbdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -587,14 +572,12 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bnguardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(22, 22, 22))
+                .addGap(32, 32, 32)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 270));
 
         lblsalir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/boton salir.gif"))); // NOI18N
         lblsalir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -603,9 +586,27 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
                 lblsalir1MouseClicked(evt);
             }
         });
-        jPanel3.add(lblsalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, 90));
+        jPanel3.add(lblsalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, 90));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(487, 0, 290, 490));
+        bnguardar.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
+        bnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/imprimir.png"))); // NOI18N
+        bnguardar.setText("IMPRIMIR");
+        bnguardar.setBorderPainted(false);
+        bnguardar.setContentAreaFilled(false);
+        bnguardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bnguardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bnguardar.setIconTextGap(-1);
+        bnguardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/imprimir1.png"))); // NOI18N
+        bnguardar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/imprimir2.png"))); // NOI18N
+        bnguardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bnguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnguardarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(bnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 126, 120));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(487, 0, 330, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -633,7 +634,12 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
     }//GEN-LAST:event_cbdescripcionItemStateChanged
 
     private void cbdescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbdescripcionActionPerformed
-        Precio();
+         if(cbdescripcion.getSelectedIndex() !=-1){
+             Precio();
+         }else{
+             txtprecio.setText("");
+             txtcantbase.setText("");
+         }
     }//GEN-LAST:event_cbdescripcionActionPerformed
 
     private void bnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnguardarActionPerformed
@@ -685,10 +691,6 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         this.setVisible(false);
     }//GEN-LAST:event_lblsalir1MouseClicked
 
-    private void cbconsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbconsumoActionPerformed
-        DescripcionProducto();
-    }//GEN-LAST:event_cbconsumoActionPerformed
-
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
         int fila= Ttabla.getSelectedRow();
         Double valor=0.0d;
@@ -705,6 +707,12 @@ public class frmFactura extends javax.swing.JFrame implements Printable{
         char e=evt.getKeyChar();
         if(e<'0'|| e>'9'){evt.consume();}
     }//GEN-LAST:event_txtcedulaKeyTyped
+
+    private void cbconsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbconsumoActionPerformed
+        if(cbconsumo.getSelectedIndex() !=-1){ 
+            DescripcionProducto();
+        }
+    }//GEN-LAST:event_cbconsumoActionPerformed
 
     public void Limpiar(){
         txtcantidad.setText("");

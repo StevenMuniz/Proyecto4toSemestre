@@ -562,17 +562,24 @@ public class frmTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcedulaKeyReleased
 
     private void bnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnmodificarActionPerformed
-          if(txtcedula.getText().equals(" ")|| txtnombres.getText().equals("") ||txtapellidos.getText().equals("") ||
-            dcfecha.getDate()==null || cbsexo.getActionCommand().equals("")||
-               txtdireccion.getText().equals("")||txttelefono.getText().equals("")||txtcontraseña.getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Falta datos por ingresar","Error",JOptionPane.ERROR_MESSAGE);
-        }else
-        if(JOptionPane.showConfirmDialog(null,"Actualizar Datos", "Confirmar",1)==0){
-            Modificar();
-            Buscar.setVisible(true);bnnuevo.setVisible(true);
-            bncancelar.setVisible(false);bneliminar.setVisible(false);bnmodificar.setVisible(false);
-            Limpiar();
-        }
+        if(txtcedula.getText().length()<10){
+            JOptionPane.showMessageDialog(null, "Digitos Incompletos","Error",JOptionPane.ERROR_MESSAGE);
+            txtcedula.requestFocus();
+        }else{
+            if(txtcedula.getText().equals(" ")|| txtnombres.getText().equals("") ||txtapellidos.getText().equals("") ||
+                dcfecha.getDate()==null || cbsexo.getActionCommand().equals("")||
+                txtdireccion.getText().equals("")||txttelefono.getText().equals("")||txtcontraseña.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Falta datos por ingresar","Error",JOptionPane.ERROR_MESSAGE);
+            }else{
+                if(JOptionPane.showConfirmDialog(null,"Actualizar Datos", "Confirmar",1)==0){
+                    Modificar();
+                    Buscar.setVisible(true);bnnuevo.setVisible(true);
+                    bncancelar.setVisible(false);bneliminar.setVisible(false);bnmodificar.setVisible(false);
+                    Limpiar();
+                }
+            }
+        } 
+        
     }//GEN-LAST:event_bnmodificarActionPerformed
 
     private void bneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bneliminarActionPerformed
@@ -591,23 +598,23 @@ public class frmTrabajador extends javax.swing.JFrame {
             txtcedula.requestFocus();
         }else{
             if(txtcedula.getText().equals("")||txtnombres.getText().equals("") ||txtapellidos.getText().equals("") ||
-            dcfecha.getDate()==null || cbsexo.getActionCommand().equals("")||
-               txtdireccion.getText().equals("")|| txttelefono.getText().equals("")||
+                dcfecha.getDate()==null || cbsexo.getActionCommand().equals("")||
+                txtdireccion.getText().equals("")|| txttelefono.getText().equals("")||
                 pfcontrasena.getText().equals(" ")){
-            JOptionPane.showMessageDialog(null, "Falta datos por ingresar","Error",JOptionPane.ERROR_MESSAGE);
-        }else
-        if(JOptionPane.showConfirmDialog(null,"GUARDAR DATOS", "Confirmar",1)==0){
-            Guardar();
-            JOptionPane.showMessageDialog(null,"DATOS GUARDADOS EXISTOSAMENTE","",JOptionPane.QUESTION_MESSAGE);
-            Limpiar();
+                JOptionPane.showMessageDialog(null, "FALTA DATOS POR INGRESAR","Error",JOptionPane.ERROR_MESSAGE);   
+            }
+            if(JOptionPane.showConfirmDialog(null,"GUARDAR DATOS", "Confirmar",1)==0){
+               Guardar();
+               JOptionPane.showMessageDialog(null,"DATOS GUARDADOS EXISTOSAMENTE","",JOptionPane.QUESTION_MESSAGE);
+               Limpiar();
            
            
-        lblmensaje.setVisible(false); jLabel20.setVisible(false);pfconfirmarcont.setVisible(false);pfcontrasena.setVisible(false);
-        bncancelar.setVisible(false);bneliminar.setVisible(false);bnguardar.setVisible(false);bnmodificar.setVisible(false);
-        Buscar.setVisible(true);bnnuevo.setVisible(true);txtcontraseña.setVisible(true);
+               lblmensaje.setVisible(false); jLabel20.setVisible(false);pfconfirmarcont.setVisible(false);pfcontrasena.setVisible(false);
+               bncancelar.setVisible(false);bneliminar.setVisible(false);bnguardar.setVisible(false);bnmodificar.setVisible(false);
+               Buscar.setVisible(true);bnnuevo.setVisible(true);txtcontraseña.setVisible(true);
+         
         
-        
-        }
+            }
             
         }       
     }//GEN-LAST:event_bnguardarActionPerformed
